@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #005589;
+}
+
+.bg-gray {
+    background-color: #f6f6f6;
+}
+
+.widget {
+    background-color: #fff;
+    border-top: 2px solid #5ea4f3;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+}
