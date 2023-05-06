@@ -25,4 +25,12 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name(
         'register'
     );
+
+    Route::post('register', [RegisteredUserController::class, 'store']);
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', function () {
+        return view('admin/dashboard');
+    });
 });
