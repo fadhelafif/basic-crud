@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ParticipantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,5 +38,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin', function () {
         return view('admin/dashboard');
-    });
+    })->name('dashboard');
+
+    Route::resource('participant', ParticipantController::class);
 });
