@@ -3,7 +3,7 @@
         Log In
     </x-slot>
     <h2 class="text-center mb-5">Log In</h2>
-    <form class="widget" method="POST" action="{{ route('login') }}">
+    <form class="widget widget--500" method="POST" action="{{ route('login') }}">
         @csrf
         <div class="mb-3">
             <label class="form-label" for="email">Email</label>

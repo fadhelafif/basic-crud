@@ -3,7 +3,7 @@
         Register
     </x-slot>
     <h2 class="text-center mb-5">Register</h2>
-    <form class="widget" method="POST" action="{{ route('register') }}">
+    <form class="widget widget--500" method="POST" action="{{ route('register') }}">
         @csrf
         <div class="mb-3">
             <label class="form-label" for="name">Name</label>
