@@ -58,15 +58,28 @@ class ParticipantController extends Controller
      */
     public function edit(Participant $participant)
     {
-        //
+        return view('admin.participant.edit', compact('participant'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Participant $participant)
-    {
-        //
+    public function update(
+        ParticipantRequest $request,
+        Participant $participant
+    ) {
+        $this->authorize('update', $participant);
+
+        $participant->update([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'x' => $request['x'],
+            'y' => $request['y'],
+            'z' => $request['z'],
+            'w' => $request['w'],
+        ]);
+
+        return redirect()->route('participant.index');
     }
 
     /**

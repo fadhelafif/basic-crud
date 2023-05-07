@@ -37,9 +37,11 @@
                             <td>
                                 <a href="{{ route('participant.show', $participant->id) }}" class="btn btn-outline-secondary">Lihat Laporan</a>
                                 <a href="{{ route('participant.edit', $participant->id) }}" class="btn btn-outline-secondary">Edit</a>
+                                @can('delete', $participant)
                                 <form class="d-inline-block" method="POST" action="{{ route('participant.destroy', $participant->id) }}">
                                     <button class="btn btn-danger">Hapus</button>
                                 </form>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach
