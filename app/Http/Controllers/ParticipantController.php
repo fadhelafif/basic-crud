@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ParticipantRequest;
 use App\Models\Participant;
 use Illuminate\Http\Request;
 
@@ -21,15 +22,27 @@ class ParticipantController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.participant.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ParticipantRequest $request)
     {
-        //
+        $participant = $request
+            ->user()
+            ->participants()
+            ->create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'x' => $request['x'],
+                'y' => $request['y'],
+                'z' => $request['z'],
+                'w' => $request['w'],
+            ]);
+
+        return redirect()->route('participant.index');
     }
 
     /**
