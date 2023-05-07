@@ -87,6 +87,10 @@ class ParticipantController extends Controller
      */
     public function destroy(Participant $participant)
     {
-        //
+        $this->authorize('delete', $participant);
+
+        $participant->delete();
+
+        return redirect()->route('participant.index');
     }
 }

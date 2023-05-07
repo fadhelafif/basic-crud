@@ -39,6 +39,8 @@
                                 <a href="{{ route('participant.edit', $participant->id) }}" class="btn btn-outline-secondary">Edit</a>
                                 @can('delete', $participant)
                                 <form class="d-inline-block" method="POST" action="{{ route('participant.destroy', $participant->id) }}">
+                                    @csrf
+                                    @method('delete')
                                     <button class="btn btn-danger">Hapus</button>
                                 </form>
                                 @endcan
