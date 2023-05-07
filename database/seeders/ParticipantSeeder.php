@@ -13,6 +13,6 @@ class ParticipantSeeder extends Seeder
      */
     public function run(): void
     {
-        Participant::factory(40)->create();
+        Participant::factory(10)->create();
     }
 }

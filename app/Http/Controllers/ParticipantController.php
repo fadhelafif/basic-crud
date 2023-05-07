@@ -13,7 +13,7 @@ class ParticipantController extends Controller
      */
     public function index()
     {
-        $participants = Participant::paginate(20);
+        $participants = Participant::paginate(5);
         return view('admin.participant.index', compact('participants'));
     }
 
