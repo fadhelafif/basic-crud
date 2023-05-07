@@ -45,7 +45,7 @@
                             @endfor
                         </tr>
                         <tr>
-                            <td>Aspek Numerical Ability <br>({{ $participant->getNumeric() }} - {{ $participant->getNumericRate() }})</td>
+                            <td>Aspek Numerical Ability</td>
                             @for($i=1; $i<=5; $i++)
                             @if ($i==$participant->getNumericRate())
                             <td>✓</td>
