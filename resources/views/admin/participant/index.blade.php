@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <x-slot:title>
-        Dashboard
+        Participant
     </x-slot>
     <div class="container pt-5">
         <h2 class="text-center mb-5">Participant</h2>
@@ -15,7 +15,7 @@
                             <th width="*" rowspan="2">Nama</th>
                             <th width="*" rowspan="2">Email</th>
                             <th width="*" colspan="4" class="text-center">Nilai</th>
-                            <th width="*" rowspan="2">Action</th>
+                            <th width="300" rowspan="2">Action</th>
                         </tr>
                         <tr>
                             <th>X</th>
@@ -34,7 +34,13 @@
                             <td>{{ $participant->y }}</td>
                             <td>{{ $participant->z }}</td>
                             <td>{{ $participant->w }}</td>
-                            <td><a href="#" class="btn btn-outline-secondary">Lihat Laporan</a></td>
+                            <td>
+                                <a href="{{ route('participant.show', $participant->id) }}" class="btn btn-outline-secondary">Lihat Laporan</a>
+                                <a href="{{ route('participant.edit', $participant->id) }}" class="btn btn-outline-secondary">Edit</a>
+                                <form class="d-inline-block" method="POST" action="{{ route('participant.destroy', $participant->id) }}">
+                                    <button class="btn btn-danger">Hapus</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     @else
