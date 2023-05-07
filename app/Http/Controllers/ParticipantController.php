@@ -50,7 +50,7 @@ class ParticipantController extends Controller
      */
     public function show(Participant $participant)
     {
-        //
+        return view('admin.participant.show', compact('participant'));
     }
 
     /**
